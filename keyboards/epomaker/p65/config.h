@@ -1,0 +1,77 @@
+/* Copyright 2025 Epomaker
+ * Copyright 2025 Epomaker <https://github.com/Epomaker>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+#pragma once
+
+/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
+#define LOCKING_SUPPORT_ENABLE
+/* Locking resynchronize hack */
+#define LOCKING_RESYNC_ENABLE
+
+/* Define less important options */
+
+/*
+ * Feature disable options
+ * These options are also useful to firmware size reduction.
+ */
+
+#define MATRIX_UNSELECT_DRIVE_HIGH
+#define CORTEX_ENABLE_WFI_IDLE FALSE
+
+/* Ensure we jump to bootloader if the RESET keycode was pressed */
+#define EARLY_INIT_PERFORM_BOOTLOADER_JUMP TRUE
+
+#define DEBOUNCE 5
+
+#ifndef NOP_FUDGE
+#    define NOP_FUDGE 0.4
+#endif
+
+#define DYNAMIC_KEYMAP_EEPROM_MAX_ADDR 1151
+#define EEPROM_SIZE 1152
+#define FEE_PAGE_SIZE (0x200)
+#define FEE_PAGE_COUNT (8)
+#define FEE_PAGE_BASE_ADDRESS (0x1F000)
+#define FEE_MCU_FLASH_SIZE (0x1000)
+#define EECONFIG_USER_DATA_SIZE 4
+#define EECONFIG_KB_DATA_SIZE 1
+#define TRANSIENT_EEPROM_SIZE 4096
+
+#define RGB_MATRIX_LED_COUNT 68
+#define RGB_MATRIX_KEYPRESSES
+#define RGB_MATRIX_KEYRELEASES
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+#define RGB_DISABLE_AFTER_TIMEOUT 0
+#define RGB_MATRIX_LED_FLUSH_LIMIT 16
+#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 200
+#define RGB_MATRIX_SLEEP
+
+// BLE configuration for P65
+#define USER_BLE_ID (0X0035) // P65 BLE ID
+#define USER_BLE1_NAME "P65-1"
+#define USER_BLE2_NAME "P65-2"
+#define USER_BLE3_NAME "P65-3"
+
+#define LED_CONNECTION_INDEX 0
+#define LED_BATT_INDEX 63
+#define LED_CAP_INDEX 29
+#define LED_WIN_L_INDEX 59
+
+#define LED_BLE_1_INDEX 15
+#define LED_BLE_2_INDEX 16
+#define LED_BLE_3_INDEX 17
+#define LED_2P4G_INDEX 18
+#define LED_USB_INDEX 19
